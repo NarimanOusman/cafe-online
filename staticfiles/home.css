@@ -1,0 +1,434 @@
+/* Coffee background */
+body {
+  margin: 0;
+  background-color: rgb(198, 156, 109); /* latte color */
+}
+
+/* Fix navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, rgb(135, 85, 19), rgb(252, 222, 162));
+  padding: 10px 50px;
+  color: white;
+  box-shadow: 
+    0 0 25px rgba(252, 222, 162, 0.9),
+    0 0 50px rgba(252, 222, 162, 0.7),
+    0 0 80px rgba(135, 85, 19, 0.5),
+    0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.logo img {
+  width: 70px;
+  margin-right: 10px;
+  padding-left: 20px;
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links li a:hover {
+  color: burlywood; /* light coffee hover */
+}
+
+/* Button */
+.nav-btn button {
+  background-color: rgb(135, 85, 19);
+  color: rgb(233, 208, 184);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  padding-right: 20px;
+}
+.nav-btn button:hover {
+  background-color: rgb(198, 156, 109); /* latte shade */
+}
+
+/* Hero Section */
+.hero {
+  height: 90vh;
+  background: url("/static/coffee-bg.jpg") no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+/* Dark overlay for better text visibility */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+  position: relative; /* stays above overlay */
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background-color: burlywood;
+  color: rgb(60, 40, 20);
+}
+
+.btn.primary:hover {
+  background-color: rgb(198, 156, 109);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn.secondary:hover {
+  background-color: white;
+  color: rgb(60, 40, 20);
+}
+
+/* Menu Section Styling */
+.menu {
+  padding: 60px 0 80px;
+  background: linear-gradient(to bottom,
+    rgb(135, 85, 19),
+    rgb(180, 120, 50),
+    rgb(252, 222, 162)
+  );
+}
+
+.text-center {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: rgb(198, 156, 109);
+  text-align: center;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.text-center.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Grid Layout */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Card Design */
+.custom-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Fixed equal images */
+.coffee-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card Content */
+.card-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: #2c1810;
+}
+
+.card-text {
+  color: #666;
+  margin: 0 0 1rem;
+  flex-grow: 1;
+}
+
+.card-btn {
+  background: #6f4e37; /* Coffee brown */
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.card-btn:hover {
+  background: #5a3e2b;
+  color: white;
+}
+
+/* Responsive: 2 cards on tablet, 1 on mobile */
+@media (max-width: 992px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* Wrapper for name + button */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 25px;
+
+}
+
+.welcome-user  {
+margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #b76327;
+;
+}
+
+/* Logout button styled */
+.btn-logout {
+  color: #f8d49d;
+  background-color: #b76327;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-logout:hover {
+  background: #f1c27d;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer-coffee {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: linear-gradient(to top,
+    rgb(135, 85, 19),
+    rgb(180, 120, 50),
+    rgb(252, 222, 162)
+  );
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.footer-coffee::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.footer-coffee::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.footer-heading {
+  font-family: 'Georgia', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 4px 0;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.newsletter-input {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 30px;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.newsletter-input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: white;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+.newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-subscribe {
+  background: white;
+  color: rgb(135, 85, 19);
+  border: none;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 10px 24px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-subscribe:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: white;
+  color: rgb(135, 85, 19);
+  transform: translateY(-3px);
+}
+
+.copyright {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 24px;
+  margin-top: 32px;
+}
+
