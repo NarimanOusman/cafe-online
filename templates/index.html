@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+  <title>welcome page</title>
+</head>
+<body>
+  
+
+  
+<div class="container">
+  <!-- Left side: Image -->
+  <div class="left">
+    <div class="bun">
+      {% load static %}
+      <img src="{% static 'nari.jpg' %}" alt="Coffee cup">
+    </div>
+  </div>
+
+  <!-- Right side: Text -->
+  <div class="right">
+    <h1 class="hero-title">Welcome to Nariman Coffee</h1>
+
+    {% if user.is_authenticated %}
+      <p class="welcome-text">
+        Welcome back! <a href="{% url 'home' %}" class="btn">Go to your dashboard</a>
+      </p>
+    {% else %}
+      <div class="auth-links">
+        <a href="{% url 'login' %}" class="btn btn-outline">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+</body>
+</html>
+
