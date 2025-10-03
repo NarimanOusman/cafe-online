@@ -1,0 +1,136 @@
+/* Warm latte-style background */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6f4e37 0%, #f7e7ce 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container with left (image) + right (text) */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08); /* subtle glass look */
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 1100px;
+  width: 90%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Left side: coffee image */
+.left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.bun img {
+  max-width: 350px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.bun img:hover {
+  transform: scale(1.05); /* slight zoom on hover */
+}
+
+/* Right side: text + buttons */
+.right {
+  flex: 1;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+/* Hero title */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  letter-spacing: 2px;
+  border-left: 6px solid #f8d49d;
+  padding-left: 1rem;
+}
+
+/* Welcome text */
+.welcome-text {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+}
+
+/* Primary button */
+.btn-primary {
+  background: #f8d49d;
+  color: #6f4e37;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #f1c27d;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(111, 78, 55, 0.4);
+}
+
+/* Outline button */
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .right {
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .btn {
+    display: block;
+    margin: 1rem auto;
+    width: 80%;
+  }
+}
