@@ -99,31 +99,11 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Media files (user-uploaded)
+# Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Whitenoise for static AND media files
-from whitenoise.storage import CompressedManifestStaticFilesStorage
-
-class WhiteNoiseStaticFilesStorage(CompressedManifestStaticFilesStorage):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.use_manifest = False  # Don't use manifest for media files
-
-STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-    "media": {
-        "BACKEND": "COFFEE_PROJECT.settings.WhiteNoiseStaticFilesStorage",  # ← Use your actual module name here
-    },
-}
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'index'  # ← Redirects to URL named 'index' after logout
+LOGOUT_REDIRECT_URL = 'index'  # ← Redirects to URL named 'index' after logout you can add it 
